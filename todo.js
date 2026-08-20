@@ -12,6 +12,11 @@ function displayTodo(todo) {
   const li = document.createElement('li')
   li.textContent = todo.text
 
+  // 完了なら取り消し線を付与
+  if (todo.completed) {
+  li.classList.add('completed')
+}
+
   li.addEventListener('click', function(){
     todo.completed =!todo.completed
     li.classList.toggle('completed')
